@@ -1,0 +1,78 @@
+<html>
+<head><!--??DEBUG set table/td border to visualize layout -->
+<style> 
+XXXtable      { border: 1px solid red; }
+td         { XXXborder: 1px solid blue; }
+h1, h2     { text-align:bottom; font-family:sans-serif; XXXmargin-top:0; margin-bottom:-0.5em; padding-bottom:0; }
+h3         { text-align:bottom; font-family:sans-serif; XXXmargin-top:0; margin-bottom:0; padding-bottom:0; }
+body       { font-family:sans-serif }
+textarea   { font-family:monospace; }
+</style>
+<title>EARe Studio</title>
+</head>
+<body>
+<h1>EARe Studio</h1>
+<h3>Information Systems Design: Visualize, Validate, Verify</h3>
+<br/>
+<!-- 
+  EAReStore FOCUS:    College Database
+  EAReStore VERSION:  220413004808 (2022.04.13 00:48)
+  EAReStore BASED ON: n/a
+-->
+<table>
+<tr valign="TOP"><td>
+<table>
+<table><tr valign="BOTTOM"><td>
+<td>
+<tr><td colspan="2">
+<form action="http://52.39.17.151/cgi-bin/earest.cgi" method="post">
+<input type="hidden" name="eare"           value="College Database:
+
+Student(name!, vNumber!, major!, minor?, gradeLevel!, graduationYear!, creditsRecieved!, creditsNeeded! Enrolls_in&gt;Course+)
+Course(title!, CRN!, instructorName!, instructorEmail!, time?, credit!, division!, prerequesite?, seatsAvailable!, seatsTaken!, waitList! Enlists&gt;Student+)"/>           <!-- HTML-encoded -->
+<input type="hidden" name="xml"            value=""/>            <!-- HTML-encoded -->
+<input type="hidden" name="src_toApply"    value="EARe"/>
+<input type="hidden" name="xpath"          value=""/>          <!-- HTML-encoded -->
+<input type="hidden" name="xsl_XtoApply"   value=""/>
+<input type="hidden" name="xsl"            value=""/>            <!-- HTML-encoded -->
+<input type="hidden" name="xsl_stdSpecs"   value=""/>
+<input type="hidden" name="xsl_params"     value=""/>     <!-- HTML-encoded -->
+<input type="hidden" name="xpath_results"  value=""/>  <!-- HTML-encoded -->
+<input type="hidden" name="xsl_results"    value=""/>    <!-- HTML-encoded -->
+<input type="hidden" name="showEARe"       value=""/>
+<input type="hidden" name="showXML"        value=""/>
+<input type="hidden" name="showWARN"       value=""/>
+<input type="hidden" name="showSUM"        value=""/>
+<input type="hidden" name="showUCD"        value="Show"/>
+<input type="hidden" name="showUCT"        value="Show"/>
+<input type="hidden" name="showCXD"        value=""/>
+<input type="hidden" name="cxdDir"         value=""/>
+<input type="hidden" name="showERD"        value="Show"/>
+<input type="hidden" name="erdDir"         value=""/>
+<input type="hidden" name="showData"       value="YES"/>
+<input type="hidden" name="showDD"         value="Show"/>
+<input type="hidden" name="showDT"         value="Show"/>
+<input type="hidden" name="showXPath"      value=""/>
+<input type="hidden" name="showXSL"        value=""/>
+<input type="hidden" name="showXresXPath"  value=""/>
+<input type="hidden" name="showXresCust"   value=""/>
+<input type="hidden" name="showXresStd"    value=""/>
+<input type="hidden" name="showXresAsWeb"  value=""/>
+
+<input type="hidden" name="earestoreVersion"  value="220413004808 (2022.04.13 00:48)"/>
+<input type="hidden" name="earestoreBasedOn"  value="n/a"/>
+
+<h3>EARe Preview</h3>
+<textarea readonly spellcheck="false" name="eare" cols="100" rows="5" required>College Database:
+
+Student(name!, vNumber!, major!, minor?, gradeLevel!, graduationYear!, creditsRecieved!, creditsNeeded! Enrolls_in>Course+)
+Course(title!, CRN!, instructorName!, instructorEmail!, time?, credit!, division!, prerequesite?, seatsAvailable!, seatsTaken!, waitList! Enlists>Student+)</textarea>
+<b><pre>
+FOCUS:    College Database
+VERSION:  220413004808 (2022.04.13 00:48)
+BASED ON: n/a
+</pre></b>
+<div style="float;text-align:center">
+<button name="src_toApply" value="EAReStore" type="submit" formaction='http://52.39.17.151/cgi-bin/earest.cgi'>Apply EAReStore</button>
+</div>
+</form>

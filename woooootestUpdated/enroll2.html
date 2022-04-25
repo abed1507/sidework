@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    :root {
+      --color-primary-opacity: rgba(0, 0, 0, 0.212);
+    }
+    .container1 {
+      max-width: 50rem;
+      margin: 4rem auto auto auto;
+
+      /* border-style: solid;
+      border-color: var(--color-primary-opacity); */
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.3;
+      font-weight: 500;
+      align-items: center;
+    }
+    .container2 {
+      max-width: 100%;
+      margin: auto;
+      min-height: 3rem;
+      max-height: auto;
+      border-style: double;
+      border-color: gray;
+      text-align: center justify;
+      font-size: 1rem;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    a {
+      color: black;
+    }
+    .hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .modal {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    .operations__content--active {
+      display: contents;
+      color: black;
+    }
+    .operations__content {
+      display: none;
+
+      /* JUST PRESENTATIONAL */
+      font-size: 1.7rem;
+    }
+    .operations__tab--active {
+      transform: translateY(-66%);
+    }
+    .operations__tab-container {
+      display: inline-block;
+      justify-content: center;
+      align-content: center;
+    }
+    .operations__tab {
+      /* margin-right: 2.5rem; */
+      transform: translateY(-50%);
+    }
+  </style>
+  <body>
+      <div class='container' style='width:100%;'>
+	
+		<div class="field-wrap">
+			<label>
+              Department:<span class="req"></span>
+            </label>
+            <input id="department" list="departments" required autocomplete="off" name="department">
+					<datalist id="departments">
+					<option value="All">All Departments</option>
+					<option value="ACCI">Accounting</option>
+					<option value="AHSI">Art History</option>
+					<option value="BIOL">Biology</option>
+					<option value="IS">Information systems</option>
+					<option value="BIO">Biology</option>
+					<option value="CS">CS-Computer Science</option>
+					<option value="ITM">IT Management</option>
+					<option value="ART">Art</option>
+					<option value="HST">History</option>
+					</datalist>
+		</div>
+    <div class="container1">
+      <table>
+        <tr class="operations__tab-container">
+          <th>
+            <li>
+              <button
+                class="operations__tab operations__tab--1 operations__tab--active"
+                data-tab="1"
+              >
+                Course ID
+              </button>
+            </li>
+          </th>
+
+          <th>
+            <li>
+              <button class="operations__tab operations__tab--2" data-tab="2">
+                Course Number
+              </button>
+            </li>
+          </th>
+          <th>
+            <li>
+              <button class="operations__tab operations__tab--3" data-tab="3">
+                Section Number
+              </button>
+            </li>
+          </th>
+          <th>
+            <li>
+              <button class="operations__tab operations__tab--4" data-tab="4">
+                Course name
+              </button>
+            </li>
+          </th>
+          <th>
+            <li>
+              <button class="operations__tab operations__tab--5" data-tab="5">
+               Description
+              </button>
+            </li>
+          </th>
+          <th>
+            <li>
+              <button class="operations__tab operations__tab--6" data-tab="6">
+                Department Name
+              </button>
+            </li>
+          </th>
+          <th>
+            <li>
+              <button class="operations__tab operations__tab--7" data-tab="7">
+                PreReq ID
+              </button>
+            </li>
+          </th>
+        </tr>
+      </table>
+      <div class="container2">
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          ID 10012020
+        </div>
+
+        <div class="operations__content operations__content--2">475</div>
+
+        <div class="operations__content operations__content--3">1</div>
+
+        <div class="operations__content operations__content--4">Project Implementation </div>
+
+        <div class="operations__content operations__content--5"> n/a </div>
+
+        <div class="operations__content operations__content--6"> IS</div>
+
+        <div class="operations__content operations__content--7">IS475</div>
+      </div>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".operations__tab");
+      const tabsContainer = document.querySelector(
+        ".operations__tab-container"
+      );
+      const tabsContent = document.querySelectorAll(".operations__content");
+
+      tabsContainer.addEventListener("click", function (e) {
+        const clicked = e.target.closest(".operations__tab");
+
+        // Guard clause
+        if (!clicked) {
+          return;
+        } else {
+          // Activate content area
+          // Remove active classes
+          tabs.forEach((t) => t.classList.remove("operations__tab--active"));
+          tabsContent.forEach((c) => {
+            c.classList.remove("operations__content--active");
+            document
+              .querySelector(`.operations__content--${clicked.dataset.tab}`)
+              .classList.replace(
+                "operations__content",
+                "operations__content--active"
+              );
+          });
+
+          // Activate tab
+          clicked.classList.add("operations__tab--active");
+        }
+      });
+    </script>
+  </body>
+</html>
